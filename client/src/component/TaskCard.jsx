@@ -1,7 +1,15 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function TaskCard({ task }) {
   const navigate = useNavigate();
+
+  const [limitedRegistroCreado, setLimitedRegistroCreado] = useState(
+    task.Registro_Creado.substring(0, 10)
+  );
+  const [limitedRegistroActualizado, setLimitedRegistroActualizado] = useState(
+    task.Registro_Actualizado.substring(0, 10)
+  );
 
   return (
     <div
@@ -14,8 +22,12 @@ export function TaskCard({ task }) {
         {task.title}
       </h1>
       <p className="text-slate-400">{task.description}</p>
-      <p className="text-slate-400">{task.Registro_Creado}</p>
-      <p className="text-slate-400">{task.Registro_Actualizado}</p>
+      <div className="justify-center">
+        <img className="w-80 relative " src={task.foto} alt="" />
+      </div>
+      
+      <p className="text-slate-400 text-right">Creado: ({limitedRegistroCreado})</p>
+      <p className="text-slate-400 text-right">Actualizao: ({limitedRegistroActualizado})</p>
 
     </div>
   );

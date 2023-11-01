@@ -8,8 +8,28 @@ export const getAllTask = ()=>  tasksApi.get('/')
 
 export const getTask = (id)=>  tasksApi.get('/ '+ id  )
 
-export const createTask = (task) => tasksApi.post('/', task)
-
+export const createTask = async (task) => {
+    const newTask = {
+        ... task,
+        foto: task.foto[0]
+    };
+    await tasksApi.post("/", newTask, {
+        headers: {
+            "Content-Type":"multipart/form-data"
+        }
+    });
+}
 export const deleteTask = (id) => tasksApi.delete('/ '+ id )
 
-export const updateTask = (id, task) => tasksApi.put(`/${id}/`, task);
+export const updateTask = async (id, task) => {
+    const editTask = {
+        ... task,
+        foto: task.foto[0]
+    };
+    await tasksApi.put(`/${id}/`, editTask, {
+        headers: {
+            "Content-Type":"multipart/form-data"
+        }
+    });
+} 
+

@@ -11,7 +11,7 @@ class Task(models.Model):
     campo1 = models.TextField(blank=True)
     campo2 = models.TextField(blank=True)
     campo3 = models.TextField(blank=True)
-    foto = models.FileField(upload_to='productos', null = True)
+    foto = models.ImageField(upload_to='productos', null = True)
     
     def __str__(self):
         return self.title

@@ -48,7 +48,7 @@ export function TaskFormpage() {
         setValue("campo1", data.campo1);
         setValue("campo2", data.campo2);
         setValue("campo3", data.campo3);
-        // setValue("foto", data.foto);
+        setFile("foto", data.foto);
       }
     }
 
@@ -105,6 +105,7 @@ export function TaskFormpage() {
         <input
           type="file"
           name="foto"
+          accept="image"
           placeholder="foto"
           {...register("foto", { required: false })}
           className="bg-zinc-700 p-3 rounded-lg block w-full mb-3"
@@ -120,7 +121,7 @@ export function TaskFormpage() {
         
 
       </form>
-
+      
           
         
 
