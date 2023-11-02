@@ -14,11 +14,20 @@ export function TaskList() {
         loadTasks();
     },[])
     return (
-        <div>
-            {tasks.map(task =>(
+        
+        <div className="">
+            
+            <div className="
+            
+            md:grid grid-cols-2 justify center
+            "
+            >
+                {tasks.map(task =>(
                 <TaskCard key={task.id} task={task}/>
-            ))}
+                ))}
+            </div>
         </div>
+        
     )
 }
 

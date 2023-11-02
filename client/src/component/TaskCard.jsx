@@ -12,23 +12,35 @@ export function TaskCard({ task }) {
   );
 
   return (
-    <div
-      className="bg-zinc-800 p-3 hover:bg-zinc-700 hover:cursor-pointer"
+
+    <div className="flex justify-center">
+      <div className=" 
+      my-8 mx-5 
+      card 
+      lg:w-96 bg-base-100 shadow-xl bg-zinc-800 p-5 hover:bg-zinc-700 hover:cursor-pointer
+      
+
+      "
       onClick={() => {
         navigate(`/tasks/${task.id}`);
       }}
-    >
-      <h1 className="text-white font-bold uppercase rounded-lg">
-        {task.title}
-      </h1>
-      <p className="text-slate-400">{task.description}</p>
-      <div className="justify-center">
-        <img className="w-80 relative " src={task.foto} alt="" />
+      > 
+        <figure className="px-10 pt-10">
+          <img src={task.foto} alt="" className="rounded-xl" />
+        </figure>
+        <div className="card-body items-center text-center">
+          <h2 className="card-title">{task.title}</h2>
+          <p>{task.description}</p>
+          <p className="text-slate-400 ">Creado: ({limitedRegistroCreado})</p>
+          <p className="text-slate-400">Actualizado: ({limitedRegistroActualizado})</p>
+        </div>
+    
       </div>
-      
-      <p className="text-slate-400 text-right">Creado: ({limitedRegistroCreado})</p>
-      <p className="text-slate-400 text-right">Actualizao: ({limitedRegistroActualizado})</p>
 
     </div>
+    
+  
+  
+  
   );
 }

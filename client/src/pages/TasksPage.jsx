@@ -2,7 +2,11 @@ import { TaskList } from "../component/TaskList"
 
 
 export function TasksPage() {
-  return <TaskList/>;
+  return (
+    <div className="">
+      <TaskList/>
+    </div>
+  );
  
 }
 
