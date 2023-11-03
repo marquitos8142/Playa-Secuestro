@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { createTask, deleteTask, updateTask, getTask } from "../api/task.api";
 import { toast } from "react-hot-toast";
-
+import { Link } from "react-router-dom"
 import { useNavigate, useParams } from "react-router-dom";
 
 
@@ -57,6 +57,11 @@ export function TaskFormpage() {
 
   return (
     <div className="max-w-xl mx-auto">
+      <div className="justify center"> 
+        <Link to='/'><button className="bg-indigo-500 p-3 w-full rounded-lg block  mt-3 ">
+          Home
+        </button></Link>
+      </div>
       <form onSubmit={onSubmit} className="bg-zinc-800 p-10 rounded-lg mt-2">
         <input
           type="text"
@@ -107,7 +112,7 @@ export function TaskFormpage() {
           name="foto"
           accept="image"
           placeholder="foto"
-          {...register("foto", { required: true })}
+          {...register("foto", { required: false })}
           className="bg-zinc-700 p-3 rounded-lg block w-full mb-3"
           autoFocus
         />

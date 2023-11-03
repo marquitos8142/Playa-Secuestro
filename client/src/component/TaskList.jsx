@@ -19,7 +19,7 @@ export function TaskList() {
             
             <div className="
             
-            md:grid grid-cols-2 justify center
+            md:grid grid-cols-7 grid-rows-4 justify center auto-rows-auto
             "
             >
                 {tasks.map(task =>(
